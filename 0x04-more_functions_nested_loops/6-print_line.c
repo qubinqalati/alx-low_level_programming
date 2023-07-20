@@ -1,17 +1,18 @@
 #include "main.h"
 
 /**
- * print_line - prints a straight line
- * @n: number of iterations
+ * print_line - printing lines
+ * @n: number of times
  *
- * Return: NULL
+ * Return: void
  */
+
 
 void print_line(int n)
 {
 	int i;
 
-	for (int i = 0; i < n; i++)
+	for (i = 0; i < n; i++)
 	{
 		_putchar('_');
 	}
