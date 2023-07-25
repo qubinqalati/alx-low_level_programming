@@ -1,4 +1,3 @@
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -10,57 +9,47 @@
  * Return: 0
  */
 
-void keygen(int N);
-
 int main(void)
 {
-	int N = 10;
+	char password[84];
+	int index = 0, sum = 0, diff_half1, diff_half2;
 
-	keygen(N);
+	srand(time(0));
 
-	printf("\n");
-
-	return (0);
-}
-
-void keygen(int N)
-{
-	int i = 0;
-	int generator = 0;
-	srand((unsigned int)(time(NULL)));
-	char numbers[] = "0123456789";
-	char letter[] = "abcdefghijklmnopqrstuvwxyz";
-	char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char symbols[] = "!@#$^&*?";
-	char password[N];
-
-	generator = rand() % 4;
-
-	for (i = 0; i < N; i++)
+	while (sum < 2772)
 	{
-		if (generator == 1)
+		password[index] = 33 + rand() % 94;
+		sum += password[index++];
+	}
+
+	password[index] = '\0';
+
+	if (sum != 2772)
+	{
+		diff_half1 = (sum - 2772) / 2;
+		diff_half2 = (sum - 2772) / 2;
+		if ((sum - 2772) % 2 != 0)
+			diff_half1++;
+
+		for (index = 0; password[index]; index++)
 		{
-			password[i] = numbers[rand() % 10];
-			generator = rand() % 4;
-			printf("%c", password[i]);
+			if (password[index] >= (33 + diff_half1))
+			{
+				password[index] -= diff_half1;
+				break;
+			}
 		}
-		else if (generator == 2)
+		for (index = 0; password[index]; index++)
 		{
-			password[i] = symbols[rand() % 8];
-			generator = rand() % 4;
-			printf("%c", password[i]);
-		}
-		else if (generator == 3)
-		{
-			password[i] = alpha[rand() % 26];
-			generator = rand() % 4;
-			printf("%c", password[i]);
-		}
-		else
-		{
-			password[i] = letter[rand() % 26];
-			generator = rand() % 4;
-			printf("%c", password[i]);
+			if (password[index] >= (33 + diff_half2))
+			{
+				password[index] -= diff_half2;
+				break;
+			}
 		}
 	}
+
+	printf("%s", password);
+
+	return (0);
 }
