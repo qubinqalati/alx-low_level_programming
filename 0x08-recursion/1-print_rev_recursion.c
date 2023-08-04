@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * _print_rev_recursion prints a string in rev
- * @s: string 
+ * _print_rev_recursion - prints a string in rev
+ * @s: string
  * Return: void
  */
 
