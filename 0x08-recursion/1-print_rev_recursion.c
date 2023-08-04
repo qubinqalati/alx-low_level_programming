@@ -2,8 +2,7 @@
 
 /**
  * _print_rev_recursion prints a string in rev
- * @s: string
- * 
+ * @s: string 
  * Return: void
  */
 
