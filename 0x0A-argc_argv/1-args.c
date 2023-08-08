@@ -3,6 +3,7 @@
 /**
  * main - entry point
  * @argc: number of arguments
+ * @argv: void
  *
  * Return: Always success
  */
