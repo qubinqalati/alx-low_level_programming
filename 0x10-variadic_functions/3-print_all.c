@@ -47,11 +47,8 @@ void print_all(const char * const format, ...)
 				break;
 		}
 		if (format[x + 1] != '\0' && num == 0)
-		{
 			printf(", ");
-		}
 		x++;
 	}
-	va_end(args);
 	putchar('\n');
 }
