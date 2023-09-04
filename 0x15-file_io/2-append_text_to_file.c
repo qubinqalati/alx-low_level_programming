@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strlen - lorem upsum
+ * _strlen - lorem ipsum
  * @str: lorem ipsum
  *
  * Return: ...
@@ -24,7 +24,7 @@ size_t _strlen(char *str)
  * Return: ...
  */
 
-int append_text_to_file(const char *filename, char *text_cintent)
+int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd;
 	ssize_t len;

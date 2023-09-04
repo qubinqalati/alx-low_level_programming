@@ -2,14 +2,16 @@
 
 /**
  * create_file - lorem ipsum
+ *
  * @text_content: lorem ipsum
- * 
+ * @filename: lorem ipsum
+ *
  * Return: ...
  */
 
 int create_file(const char *filename, char *text_content)
 {
-	int o, w, len;
+	int o, w, len = 0;
 
 	if (filename == NULL)
 		return (-1);
@@ -25,6 +27,7 @@ int create_file(const char *filename, char *text_content)
 
 	if (o == -1 || w == -1)
 		return (-1);
+
 	close(o);
 
 	return (1);
